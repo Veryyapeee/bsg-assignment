@@ -1,5 +1,7 @@
 import React from "react";
 
+import InvalidMessage from "Atoms/InvalidMessage/InvalidMessage";
+
 import styles from "./Input.module.scss";
 
 import { Form, Select } from "Utils/types";
@@ -93,7 +95,14 @@ const input: React.FC<Props> = (props) => {
       break;
   }
 
-  return <>{input}</>;
+  return (
+    <>
+      {input}{" "}
+      {!props.valid && props.touched ? (
+        <InvalidMessage>{props.errorMessage}</InvalidMessage>
+      ) : null}
+    </>
+  );
 };
 
 export default input;

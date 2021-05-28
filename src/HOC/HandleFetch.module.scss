@@ -8,6 +8,7 @@
   left: 0;
   background: $transparentBg;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
