@@ -71,12 +71,12 @@ const Login = () => {
   };
   return (
     <div className={styles.mainWrapper}>
-      <img src={Camera} alt="Old camera" className={styles.cameraImg} />
       <HandleFetch
         loading={loginData.loading}
         error={loginData.error}
         data={loginData.data}
       >
+        <img src={Camera} alt="Old camera" className={styles.cameraImg} />
         <Form>
           <FormStructure
             config={form}

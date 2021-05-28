@@ -12,7 +12,7 @@ import styles from "./loginTemplate.module.scss";
 import { RootState } from "ReduxStore/store";
 
 interface Props {
-  children: JSX.Element[];
+  children: JSX.Element[] | JSX.Element;
 }
 
 const LoginTemplate: React.FC<Props> = ({ children }) => {
@@ -42,6 +42,7 @@ const LoginTemplate: React.FC<Props> = ({ children }) => {
         loading={userData.loading || videoData.loading}
         error={userData.error || videoData.error}
         data={userData.data || videoData.data}
+        status={videoData.status}
       >
         <Header />
         {children}

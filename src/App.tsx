@@ -19,16 +19,16 @@ function App() {
         <Route
           path="/logged/(.+)"
           render={() => (
-            <Switch>
-              <LoginTemplate>
-                <ProtectedRoute path="/logged/videos" component={Home} />
+            <LoginTemplate>
+              <Switch>
                 <ProtectedRoute
                   path="/logged/videos/:videoId"
                   component={Player}
                 />
-              </LoginTemplate>
-              <Route render={() => <Redirect to="/not-found" />} />
-            </Switch>
+                <ProtectedRoute path="/logged/videos" component={Home} />
+                <Route render={() => <Redirect to="/not-found" />} />
+              </Switch>
+            </LoginTemplate>
           )}
         />
         <Route path="/not-found" component={Page404} />
