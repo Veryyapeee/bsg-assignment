@@ -35,8 +35,8 @@ const Login = () => {
       val: "",
       type: InputType.TEXT,
       inputType: InputType.INPUT,
-      placeholder: "E-mail",
-      label: "E-mail",
+      placeholder: "Username",
+      label: "Username",
       validation: {
         required: true,
         minLength: 5,
@@ -44,6 +44,7 @@ const Login = () => {
       },
       touched: false,
       valid: false,
+      errorMessage: "Username should be between 5 and 50 characters long",
     },
     Password: {
       val: "",
@@ -59,6 +60,8 @@ const Login = () => {
       },
       touched: false,
       valid: false,
+      errorMessage:
+        "Password should be between 8 and 50 characters, contain one number, small letter, big letter and special character",
     },
   });
 
