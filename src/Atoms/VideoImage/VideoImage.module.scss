@@ -1,0 +1,13 @@
+@import "Styles/variables.scss";
+
+.imgWrapper {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+  img {
+    box-shadow: $shadow;
+    height: 100%;
+    width: auto;
+  }
+}

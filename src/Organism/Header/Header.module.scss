@@ -1,0 +1,11 @@
+@import "Styles/variables.scss";
+
+.header {
+  width: 100%;
+  box-shadow: $shadow;
+  background: $whiteDark;
+  padding: 1.5em 2em;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2em;
+}

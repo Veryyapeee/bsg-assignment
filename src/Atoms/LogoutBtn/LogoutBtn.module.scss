@@ -1,0 +1,10 @@
+@import "Styles/variables.scss";
+
+.logOut {
+  color: $blueBgLight;
+  font-weight: 500;
+  &:hover {
+    cursor: pointer;
+    color: $blueBgDark;
+  }
+}

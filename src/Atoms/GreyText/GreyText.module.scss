@@ -1,0 +1,10 @@
+@import "Styles/variables.scss";
+
+.text {
+  font-size: 0.8em;
+  color: $grey;
+  &:hover {
+    cursor: pointer;
+    color: $greyHover;
+  }
+}

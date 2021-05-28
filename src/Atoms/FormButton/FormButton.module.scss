@@ -1,0 +1,20 @@
+@import "Styles/variables.scss";
+
+.button {
+  outline: none;
+  border: none;
+  border-radius: 0.2em;
+  color: $white;
+  background: $blueBg;
+  padding: 0.5em 0;
+  font-size: 0.9em;
+  &:hover {
+    cursor: pointer;
+    background: $blueBgLight;
+  }
+  &:disabled {
+    background: $blueBgDark;
+    color: $greyLight;
+    cursor: auto;
+  }
+}

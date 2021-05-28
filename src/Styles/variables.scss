@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+$fontRoboto: "Roboto", sans-serif;
+
+$white: #fff;
+$whiteDark: #e8e8e8;
+$black: #000;
+$blue: #98e0f5;
+$grey: #ababab;
+$greyHover: #8c8c8c;
+$greyLight: #dbdbdb;
+
+$blueBg: #e6d081;
+$blueBgDark: #e6be62;
+$blueBgLight: #e6c970;
+$mainBg: white;
+
+$shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+@mixin scrollbar(
+  $scrollSize: 4px,
+  $backgroundTrack: #333845,
+  $backgroundThumb: #83868e,
+  $scrollRadius: 0px
+) {
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: $scrollSize;
+  }
+  &::-webkit-scrollbar-track {
+    background: $backgroundTrack;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $backgroundThumb;
+    border-radius: $scrollRadius;
+  }
+}
