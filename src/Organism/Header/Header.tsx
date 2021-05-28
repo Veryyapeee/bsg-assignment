@@ -1,11 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
-import BlackText from "Atoms/BlackText/BlackText";
+import HeaderLink from "Atoms/HeaderLink/HeaderLink";
 import LogoutBtn from "Atoms/LogoutBtn/LogoutBtn";
-
-import { RootState } from "ReduxStore/store";
 
 import { logoutAction } from "ReduxStore/auth/login";
 
@@ -14,7 +12,6 @@ import styles from "./Header.module.scss";
 const Header = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const loggedUser = useSelector((state: RootState) => state.loginUser);
 
   const logout = () => {
     dispatch(logoutAction());
@@ -23,7 +20,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <BlackText>{loggedUser.data.User.FullName}</BlackText>
+      <HeaderLink path="/logged/videos">HOME</HeaderLink>
       <LogoutBtn onClick={() => logout()}>Sign Out</LogoutBtn>
     </header>
   );

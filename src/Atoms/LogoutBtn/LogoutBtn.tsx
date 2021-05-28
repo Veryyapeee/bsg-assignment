@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./LogoutBtn.module.scss";
 
 interface Props {
-  children: string;
+  children: any;
   onClick?: () => void;
 }
 

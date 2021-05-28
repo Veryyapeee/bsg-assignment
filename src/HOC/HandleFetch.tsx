@@ -12,7 +12,7 @@ interface Props {
 
 const HandleFetch: React.FC<Props> = ({ children, loading, error, data }) => {
   if (error) {
-    return <div>Error</div>;
+    return <div className={styles.error}>Error</div>;
   }
   if (loading) {
     return (

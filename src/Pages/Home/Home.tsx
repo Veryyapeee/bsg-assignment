@@ -10,6 +10,7 @@ import VideoTitle from "Atoms/VideoTitle/VideoTitle";
 import VideoCard from "Molecules/VideoCard/VideoCard";
 import WatchVideoButton from "Atoms/WatchVideoButton/WatchVideoButton";
 import VideoDescription from "Atoms/VideoDescription/VideoDescription";
+import SectionTitle from "Atoms/SectionTitle/SectionTitle";
 
 import VideosTemplate from "Templates/VideosTemplate/VideosTemplate";
 
@@ -17,7 +18,6 @@ import { RootState } from "ReduxStore/store";
 import { Video } from "Utils/types";
 
 import styles from "./Home.module.scss";
-import BigTitle from "Atoms/BigTitle/BigTitle";
 
 library.add(faPlayCircle);
 
@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <div className={styles.main}>
-      <BigTitle>Most watched</BigTitle>
+      <SectionTitle>Most watched movies!</SectionTitle>
       <VideosTemplate maxSize={1}>
         {videos.data.Entities.map((vid: Video) => (
           <VideoCard key={vid.Id}>
@@ -34,10 +34,10 @@ const Home = () => {
             <div className={styles.cardRight}>
               <VideoTitle>{vid.Title}</VideoTitle>
               <VideoDescription>{vid.Description}</VideoDescription>
-              <WatchVideoButton path={`/logged/videos/${vid.Id}`}>
-                <FontAwesomeIcon icon={faPlayCircle} /> Watch
-              </WatchVideoButton>
             </div>
+            <WatchVideoButton path={`/logged/videos/${vid.Id}`}>
+              <FontAwesomeIcon icon={faPlayCircle} /> Watch
+            </WatchVideoButton>
           </VideoCard>
         ))}
       </VideosTemplate>

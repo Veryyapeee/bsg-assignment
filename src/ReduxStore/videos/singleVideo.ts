@@ -49,18 +49,17 @@ export const { start, success, failed } = getSingleVideo.actions;
 
 export const getSingleVideoFetch = (videoId: number, type: string): AppThunk => async (dispatch) => {
     dispatch(start());
-    await axios.post(`/Media/GetMediaPlayInfo`, {
-        MediaId: videoId,
-        StreamType: type
-    }, {
-        headers: { 'Authorization': localStorage.getItem('token') }
-    })
-        .then(res => {
-            dispatch(success(res.data));
-        })
-        .catch(err => {
-            dispatch(failed(err.response.data));
-        })
+    try {
+        const result = await axios.post(`/Media/GetMediaPlayInfo`, {
+            MediaId: videoId,
+            StreamType: type
+        }, {
+            headers: { 'Authorization': localStorage.getItem('token') }
+        });
+        dispatch(success(result.data))
+    } catch (error) {
+        dispatch(failed(error.response.data));
+    }
 }
 
 export const selectLoading = (state: RootState) => state.getSingleVideo.loading;
