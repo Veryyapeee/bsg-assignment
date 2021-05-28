@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
-import { Form, FileForm } from "Utils/types";
-import { validation, fileValidation, wholeFormValidity } from './validation';
+import { Form } from "Utils/types";
+import { validation, wholeFormValidity } from './validation';
 import { mutateState } from './mutateFormData';
 
 /* Main onChange action creator
@@ -10,24 +10,6 @@ import { mutateState } from './mutateFormData';
     @param {checkPass} - boolean value to pass if we have to check if passwords are matching
 */
 const OnChangeForm = (e: { target: HTMLInputElement }, inputType: string, state: Form, setState: Dispatch<SetStateAction<Form>>): boolean => {
-
-    // If we add file we have to make an array on change - later add touch and valid to this
-    const input = state[inputType] as FileForm;
-    if (input.type === 'file') {
-        const updated = {
-            ...state,
-            [inputType]: {
-                ...input,
-                val: Array.from(e.target.files!),
-                touched: true,
-                valid: fileValidation(state[inputType].validation, Array.from(e.target.files!))
-            }
-
-        };
-        setState(updated);
-        return wholeFormValidity(updated);
-    }
-
     // Make state copy with new value
     const stateCopy = {
         ...state, [inputType]: {

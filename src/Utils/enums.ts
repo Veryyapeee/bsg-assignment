@@ -5,10 +5,8 @@ export enum InputType {
     TEXT = 'text',
     PASSWORD = 'password',
     DATE = 'date',
-    FILE = 'file',
 }
 
 export enum UserType {
-    ANONYM = 'TRIAL',
-    LOGGED = 'MAIN'
+    ANONYM = 'TRIAL'
 }

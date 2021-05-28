@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Footer from "Organism/Footer/Footer";
 import Header from "Organism/Header/Header";
 
 import { loginUserFetch } from "ReduxStore/auth/login";
@@ -26,7 +25,7 @@ const LoginTemplate: React.FC<Props> = ({ children }) => {
       dispatch(loginUserFetch(localStorage.getItem("userType") || ""));
       dispatch(
         getVideosListFetch({
-          MediaListId: 2,
+          MediaListId: 2, //Or 5 for other data
           IncludeCategories: false,
           IncludeImages: true,
           IncludeMedia: false,
@@ -46,7 +45,6 @@ const LoginTemplate: React.FC<Props> = ({ children }) => {
       >
         <Header />
         {children}
-        <Footer />
       </HandleFetch>
     </div>
   );

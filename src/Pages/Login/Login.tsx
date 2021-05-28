@@ -61,7 +61,11 @@ const Login = () => {
   });
 
   const login = (userType: string) => {
-    dispatch(loginUserFetch(userType, dataForm));
+    dispatch(loginUserFetch(userType, { Username: "", Password: "" }));
+  };
+
+  const test = () => {
+    console.log(dataForm);
   };
   return (
     <div className={styles.mainWrapper}>
@@ -75,7 +79,7 @@ const Login = () => {
             config={form}
             setConfig={setForm}
             buttonTitle={"SIGN IN"}
-            onSubmit={() => login(UserType.LOGGED)}
+            onSubmit={test}
           />
           <GreyText onClick={() => login(UserType.ANONYM)}>
             Or login as Anonymous User

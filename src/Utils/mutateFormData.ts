@@ -1,4 +1,4 @@
-import { Form, InputText, FormData } from "Utils/types";
+import { Form, FormData } from "Utils/types";
 
 /* Mutate state
   @param {value} - input current value
@@ -11,36 +11,15 @@ export const mutateState = (
     inputType: string,
     stateCopy: Form,
     validity: boolean,
-) => {
-
-    const state = stateCopy[inputType] as InputText;
-    if (state.validation) {
-        if (state.validation.refToMatch) {
-            const secondState = stateCopy[state.validation!.refToMatch];
-            return {
-                ...stateCopy,
-                [inputType]: {
-                    ...stateCopy[inputType],
-                    valid: state.val === secondState.val && validity,
-                    touched: value !== '',
-                },
-                [state.validation!.refToMatch]: {
-                    ...stateCopy[state.validation!.refToMatch],
-                    valid: state.val === secondState.val && validity,
-                }
-            }
-        }
+) => ({
+    ...stateCopy,
+    [inputType]: {
+        ...stateCopy[inputType],
+        valid: validity,
+        touched: value !== "",
     }
-
-    return {
-        ...stateCopy,
-        [inputType]: {
-            ...stateCopy[inputType],
-            valid: validity,
-            touched: value !== "",
-        },
-    };
-};
+}
+);
 
 // Mutate form data to object: val format
 export const mutateFormData = (state: Form) => {
