@@ -1,14 +1,4 @@
-.loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.1);
-}
+@import "Styles/variables.scss";
 
 .error {
   height: 100vh;
@@ -16,14 +6,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.048);
+  background: $transparentBg;
   display: flex;
   justify-content: center;
   align-items: center;
-  .innerError {
-    .errText {
-      font-size: 2em;
-      font-weight: 500;
-    }
-  }
 }

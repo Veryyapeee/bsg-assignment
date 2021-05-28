@@ -11,6 +11,7 @@ interface State {
     error: Error | null;
     success: boolean;
     data: SingleVideo;
+    status: number;
 }
 
 const initialState: State = {
@@ -18,6 +19,7 @@ const initialState: State = {
     error: null,
     success: false,
     data: defaultSingleVideo,
+    status: 200
 }
 
 const getSingleVideo = createSlice({
@@ -29,18 +31,21 @@ const getSingleVideo = createSlice({
             state.error = null;
             state.success = false;
             state.data = defaultSingleVideo;
+            state.status = 200;
         },
         success: (state, action) => {
             state.loading = false;
             state.error = null;
             state.success = true;
-            state.data = action.payload
+            state.data = action.payload.data;
+            state.status = action.payload.status;
         },
         failed: (state, action) => {
             state.loading = true;
             state.error = action.payload;
             state.success = false;
             state.data = defaultSingleVideo;
+            state.status = 400;
         }
     }
 })
@@ -56,7 +61,7 @@ export const getSingleVideoFetch = (videoId: number, type: string): AppThunk => 
         }, {
             headers: { 'Authorization': localStorage.getItem('token') }
         });
-        dispatch(success(result.data))
+        dispatch(success({ data: result.data, status: result.status }))
     } catch (error) {
         dispatch(failed(error.response.data));
     }

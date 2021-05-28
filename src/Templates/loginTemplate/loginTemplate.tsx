@@ -42,6 +42,7 @@ const LoginTemplate: React.FC<Props> = ({ children }) => {
         loading={userData.loading || videoData.loading}
         error={userData.error || videoData.error}
         data={userData.data || videoData.data}
+        status={videoData.status}
       >
         <Header />
         {children}

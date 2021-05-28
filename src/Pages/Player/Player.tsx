@@ -14,6 +14,8 @@ import HandleFetch from "HOC/HandleFetch";
 import SectionTitle from "Atoms/SectionTitle/SectionTitle";
 import VideoDescription from "Atoms/VideoDescription/VideoDescription";
 
+import NoData from "Assets/nodata.png";
+
 const Player = () => {
   const playerRef = React.useRef<HTMLVideoElement>(null);
   const dispatch = useDispatch();
@@ -36,10 +38,11 @@ const Player = () => {
         loading={video.loading}
         error={video.error}
         data={video.data}
+        status={video.status}
       >
         <div className={styles.playerInnerWrapper}>
           {video.data.ContentUrl === "" || !video.data.ContentUrl ? (
-            <span>No data</span>
+            <img src={NoData} alt="No data provided" />
           ) : (
             <ReactHlsPlayer
               src={video.data.ContentUrl}
