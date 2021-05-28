@@ -1,4 +1,4 @@
-# BEtter Software Group Recruitment task
+# Better Software Group Recruitment task
 
 This project was made due to the BSG recruitment task for the position of Junior Front End Developer.
 
