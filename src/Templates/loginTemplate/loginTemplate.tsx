@@ -12,7 +12,7 @@ import styles from "./loginTemplate.module.scss";
 import { RootState } from "ReduxStore/store";
 
 interface Props {
-  children: JSX.Element[];
+  children: JSX.Element[] | JSX.Element;
 }
 
 const LoginTemplate: React.FC<Props> = ({ children }) => {
