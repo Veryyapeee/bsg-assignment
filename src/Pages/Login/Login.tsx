@@ -9,12 +9,14 @@ import Form from "Organism/Form/Form";
 
 import FormStructure from "Form/Form/Form";
 
+import { RootState } from "ReduxStore/store";
 import { loginUserFetch } from "ReduxStore/auth/login";
 import HandleFetch from "HOC/HandleFetch";
 
 import { InputType, UserType } from "Utils/enums";
 import styles from "./Login.module.scss";
-import { RootState } from "ReduxStore/store";
+
+import Camera from "Assets/camera.png";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -69,6 +71,7 @@ const Login = () => {
   };
   return (
     <div className={styles.mainWrapper}>
+      <img src={Camera} alt="Old camera" className={styles.cameraImg} />
       <HandleFetch
         loading={loginData.loading}
         error={loginData.error}

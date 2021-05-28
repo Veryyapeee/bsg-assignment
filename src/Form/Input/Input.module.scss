@@ -6,12 +6,23 @@
   gap: 0.2em;
 
   .label {
+    font-family: $fontOpenSans;
+    font-weight: 600;
   }
   .inputContainer {
     .input {
       outline: none;
-      border: 1px solid black;
-      padding: 0.4em 0.8em;
+      border: none;
+      border-bottom: 3px solid $black;
+      border-radius: 0.3em 0.3em 0 0;
+      padding: 0.6em 1em;
+      font-family: $fontOpenSans;
+      &:focus {
+        outline: 2px solid $black;
+      }
+      ::placeholder {
+        font-family: $fontOpenSans;
+      }
     }
   }
 }

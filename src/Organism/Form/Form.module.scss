@@ -1,7 +1,9 @@
 .formElementsWrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 0.7em;
   justify-content: center;
   align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 3em;
 }

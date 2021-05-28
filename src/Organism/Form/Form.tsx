@@ -1,6 +1,6 @@
 import React from "react";
 
-import BigTitle from "Atoms/BigTitle/BigTitle";
+import SectionTitle from "Atoms/SectionTitle/SectionTitle";
 
 import styles from "./Form.module.scss";
 
@@ -11,7 +11,7 @@ interface Props {
 const Form: React.FC<Props> = ({ children }) => {
   return (
     <div className={styles.formElementsWrapper}>
-      <BigTitle>Sign In</BigTitle>
+      <SectionTitle>Sign In</SectionTitle>
       {children}
     </div>
   );

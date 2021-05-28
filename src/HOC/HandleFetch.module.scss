@@ -16,5 +16,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.048);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .innerError {
+    .errText {
+      font-size: 2em;
+      font-weight: 500;
+    }
+  }
 }
