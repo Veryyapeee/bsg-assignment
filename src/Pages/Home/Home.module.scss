@@ -1,3 +1,5 @@
+@import "Styles/variables.scss";
+
 .main {
   padding: 4em 2em;
   width: 80%;
@@ -6,16 +8,32 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 3em;
   .cardRight {
+    position: relative;
+    max-width: 470px;
+    min-width: 180px;
     display: flex;
     flex-direction: column;
-    padding: 1em;
+    padding: 1.5em;
     gap: 1em;
     justify-content: center;
     align-items: center;
+    background: $yellowBgLight;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      border: 1px solid $black;
+      top: -0.5em;
+      right: -0.5em;
+    }
     > div {
+      width: 100%;
+      text-align: right;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
       text-align: center;
     }

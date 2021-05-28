@@ -50,15 +50,16 @@ export const { start, success, failed } = getVideosList.actions;
 
 export const getVideosListFetch = (data: FetchVideosEntryData): AppThunk => async (dispatch) => {
     dispatch(start());
-    await axios.post('/Media/GetMediaList', data, {
-        headers: { 'Authorization': localStorage.getItem('token') }
-    })
-        .then(res => {
-            dispatch(success(res.data));
-        })
-        .catch(err => {
-            dispatch(failed(err.response.data));
-        })
+    try {
+        const result = await axios.post('/Media/GetMediaList', data, {
+            headers: { 'Authorization': localStorage.getItem('token') }
+        });
+        dispatch(success(result.data));
+    } catch (error) {
+        dispatch(failed(error.response.data));
+    }
+
+
 }
 
 export const selectLoading = (state: RootState) => state.getVideosList.loading;

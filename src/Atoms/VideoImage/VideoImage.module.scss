@@ -3,11 +3,12 @@
 .imgWrapper {
   display: flex;
   justify-content: center;
-  height: 200px;
+  height: 250px;
   width: 100%;
   @media (max-width: 1024px) {
     height: 100px;
   }
+
   img {
     box-shadow: $shadow;
     height: 100%;

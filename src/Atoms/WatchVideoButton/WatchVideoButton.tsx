@@ -10,7 +10,7 @@ interface Props {
 
 const WatchVideoButton: React.FC<Props> = ({ children, path }) => {
   return (
-    <div>
+    <div className={styles.btnWrapper}>
       <Link to={path} className={styles.redirectButton}>
         {children}
       </Link>

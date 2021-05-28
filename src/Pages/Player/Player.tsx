@@ -11,6 +11,8 @@ import { RootState } from "ReduxStore/store";
 import { TParams } from "Utils/types";
 
 import HandleFetch from "HOC/HandleFetch";
+import SectionTitle from "Atoms/SectionTitle/SectionTitle";
+import VideoDescription from "Atoms/VideoDescription/VideoDescription";
 
 const Player = () => {
   const playerRef = React.useRef<HTMLVideoElement>(null);
@@ -35,10 +37,10 @@ const Player = () => {
         error={video.error}
         data={video.data}
       >
-        {video.data.ContentUrl === "" || !video.data.ContentUrl ? (
-          <span>No data</span>
-        ) : (
-          <div className={styles.player}>
+        <div className={styles.playerInnerWrapper}>
+          {video.data.ContentUrl === "" || !video.data.ContentUrl ? (
+            <span>No data</span>
+          ) : (
             <ReactHlsPlayer
               src={video.data.ContentUrl}
               autoPlay={false}
@@ -47,11 +49,11 @@ const Player = () => {
               height="auto"
               playerRef={playerRef}
             />
+          )}
+          <div className={styles.description}>
+            <SectionTitle>Description</SectionTitle>
+            <VideoDescription>{video.data.Description}</VideoDescription>
           </div>
-        )}
-        <div className={styles.description}>
-          <div>Description</div>
-          {video.data.Description}
         </div>
       </HandleFetch>
     </div>

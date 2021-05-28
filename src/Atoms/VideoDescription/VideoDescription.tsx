@@ -7,7 +7,11 @@ interface Props {
 }
 
 const VideoDescription: React.FC<Props> = ({ children }) => {
-  return <div className={styles.descWrapper}>{children}</div>;
+  return (
+    <div className={styles.descWrapper} style={{ textAlign: "right" }}>
+      {children}
+    </div>
+  );
 };
 
 export default VideoDescription;

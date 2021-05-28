@@ -60,15 +60,14 @@ export const { start, success, failed, logout } = loginUser.actions;
 
 export const loginUserFetch = (userType: string, loginData: LoginData = AnonymData): AppThunk => async (dispatch) => {
     dispatch(start());
-    await axios.post('/Authorization/SignIn', loginData)
-        .then(res => {
-            dispatch(success(res.data));
-            localStorage.setItem('token', res.data.AuthorizationToken.Token);
-            localStorage.setItem('userType', userType);
-        })
-        .catch(err => {
-            dispatch(failed(err.response.data));
-        })
+    try {
+        const result = await axios.post('/Authorization/SignIn', loginData);
+        dispatch(success(result.data));
+        localStorage.setItem('token', result.data.AuthorizationToken.Token);
+        localStorage.setItem('userType', userType);
+    } catch (error) {
+        dispatch(failed(error.response.data));
+    }
 }
 
 export const logoutAction = (): AppThunk => (dispatch) => {

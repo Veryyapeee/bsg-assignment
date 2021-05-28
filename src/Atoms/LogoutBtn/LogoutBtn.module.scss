@@ -1,10 +1,14 @@
 @import "Styles/variables.scss";
 
 .logOut {
-  color: $yellowBgLight;
+  color: $black;
   font-weight: 500;
+  padding: 0.5em 1em;
+  border: 3px solid $black;
+  transition: all 0.2s ease;
   &:hover {
     cursor: pointer;
     color: $yellowBgDark;
+    border-color: $yellowBgDark;
   }
 }

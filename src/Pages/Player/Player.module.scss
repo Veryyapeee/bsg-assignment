@@ -1,13 +1,24 @@
 .playerWrapper {
   padding: 4em 0;
-  margin: 0 auto;
-  width: 80%;
+  margin-top: 5em;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  gap: 1em;
-  .player {
+  align-items: center;
+  height: 70vh;
+  .playerInnerWrapper {
+    width: 60%;
+    height: 60%;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
   }
+
   .description {
+    text-align: right;
+    > div {
+      margin: 1em 0;
+    }
   }
 }

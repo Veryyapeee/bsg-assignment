@@ -25,7 +25,7 @@ const LoginTemplate: React.FC<Props> = ({ children }) => {
       dispatch(loginUserFetch(localStorage.getItem("userType") || ""));
       dispatch(
         getVideosListFetch({
-          MediaListId: 2, //Or 5 for other data
+          MediaListId: 2, //Or 4,5 for other data
           IncludeCategories: false,
           IncludeImages: true,
           IncludeMedia: false,

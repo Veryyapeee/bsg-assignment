@@ -2,6 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .error {
@@ -10,5 +16,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.048);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .innerError {
+    .errText {
+      font-size: 2em;
+      font-weight: 500;
+    }
+  }
 }

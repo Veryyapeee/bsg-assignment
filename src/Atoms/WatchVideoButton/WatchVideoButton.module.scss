@@ -1,9 +1,20 @@
 @import "Styles/variables.scss";
 
-.redirectButton {
-  text-decoration: none;
-  padding: 0.5em 2em;
-  border: 3px solid black;
-  color: black;
-  font-weight: 600;
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .redirectButton {
+    text-decoration: none;
+    padding: 0.5em 2em;
+    border: 3px solid $black;
+    color: black;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    &:hover {
+      cursor: pointer;
+      color: $yellowBgDark;
+      border-color: $yellowBgDark;
+    }
+  }
 }

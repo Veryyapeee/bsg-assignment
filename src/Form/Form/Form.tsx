@@ -79,7 +79,6 @@ const FormStructure: React.FC<Props> = ({
         event.preventDefault();
         onSubmit();
       }}
-      encType="multipart/form-data"
       className={styles.form}
     >
       {formElements}

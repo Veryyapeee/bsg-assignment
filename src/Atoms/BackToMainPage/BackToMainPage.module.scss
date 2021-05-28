@@ -1,0 +1,12 @@
+@import "Styles/variables.scss";
+
+.goBackLink {
+  text-decoration: none;
+  color: $black;
+  font-weight: 500;
+  font-size: 1.3em;
+  &:hover {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
