@@ -38,15 +38,21 @@ const Player = () => {
         {video.data.ContentUrl === "" || !video.data.ContentUrl ? (
           <span>No data</span>
         ) : (
-          <ReactHlsPlayer
-            src={video.data.ContentUrl}
-            autoPlay={false}
-            controls={true}
-            width="100%"
-            height="auto"
-            playerRef={playerRef}
-          />
+          <div className={styles.player}>
+            <ReactHlsPlayer
+              src={video.data.ContentUrl}
+              autoPlay={false}
+              controls={true}
+              width="100%"
+              height="auto"
+              playerRef={playerRef}
+            />
+          </div>
         )}
+        <div className={styles.description}>
+          <div>Description</div>
+          {video.data.Description}
+        </div>
       </HandleFetch>
     </div>
   );

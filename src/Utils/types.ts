@@ -180,24 +180,6 @@ export interface Textarea {
 }
 
 
-// File interface - upgrade every interface to make it works good
-
-export interface ValidationFile {
-    fileCount?: number,
-    maxSize?: number,
-    fileTypes?: string[],
-}
-export interface FileForm {
-    val: File[] | [];
-    type: InputType;
-    inputType: InputType.INPUT;
-    touched: boolean;
-    valid: boolean;
-    multiple?: true;
-    errorMessage?: string;
-    validation?: ValidationFile;
-}
-
 // Select
 
 export interface SelectValidation {
@@ -224,10 +206,10 @@ export interface Select {
 
 // Form interface - fix index signatures
 export interface Form {
-    [input: string]: Select | InputText | InputDate | Textarea | FileForm | any;
+    [input: string]: Select | InputText | InputDate | Textarea;
 }
 
 // Data from form in object
 export interface FormData {
-    [input: string]: string | File[];
+    [input: string]: string;
 }

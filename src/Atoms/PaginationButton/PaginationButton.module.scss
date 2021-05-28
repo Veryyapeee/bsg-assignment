@@ -1,6 +1,10 @@
+@import "Styles/variables.scss";
+
 .paginationBtn {
   font-size: 1.5em;
+  color: $yellowBgDark;
   &:hover {
     cursor: pointer;
+    color: $yellowBg;
   }
 }

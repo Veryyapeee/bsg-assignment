@@ -5,15 +5,15 @@
   border: none;
   border-radius: 0.2em;
   color: $white;
-  background: $blueBg;
+  background: $yellowBg;
   padding: 0.5em 0;
   font-size: 0.9em;
   &:hover {
     cursor: pointer;
-    background: $blueBgLight;
+    background: $yellowBgLight;
   }
   &:disabled {
-    background: $blueBgDark;
+    background: $yellowBgDark;
     color: $greyLight;
     cursor: auto;
   }
