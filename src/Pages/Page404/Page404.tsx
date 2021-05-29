@@ -12,7 +12,7 @@ const Page404 = () => {
   const dispatch = useDispatch();
   return (
     <div className={styles.pageWrapper}>
-      <img src={Image404} alt="xd" />
+      <img src={Image404} alt="Page not found" />
       <BackToMainPage path="/" onClick={() => dispatch(logout())}>
         Go back to the main page
       </BackToMainPage>

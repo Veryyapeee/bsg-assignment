@@ -55,11 +55,9 @@ export const { start, success, failed } = getSingleVideo.actions;
 export const getSingleVideoFetch = (videoId: number, type: string): AppThunk => async (dispatch) => {
     dispatch(start());
     try {
-        const result = await axios.post(`/Media/GetMediaPlayInfo`, {
+        const result = await axios.Videos.getSingleVideo({
             MediaId: videoId,
             StreamType: type
-        }, {
-            headers: { 'Authorization': localStorage.getItem('token') }
         });
         dispatch(success({ data: result.data, status: result.status }))
     } catch (error) {
