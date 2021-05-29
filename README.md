@@ -6,7 +6,6 @@ This project was made due to the BSG recruitment task for the position of Junior
 * [Technologies](#technologies)
 * [Requirements](#requirements)
 * [Setup](#setup)
-* [Demo](#demo-link)
 
 ### Technologies
 -----------------
@@ -43,7 +42,3 @@ If you do not know if you have it installed on your computer and you still want 
 * *Run command **yarn*** to install all dependencies
 * *Run command **yarn dev*** to run local server on localhost:3000
 * *Run command **yarn build*** to build the project
-
-### Demo link
------------------
-- (-)
