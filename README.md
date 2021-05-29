@@ -6,6 +6,7 @@ This project was made due to the BSG recruitment task for the position of Junior
 * [Technologies](#technologies)
 * [Requirements](#requirements)
 * [Setup](#setup)
+* [Cross platform](#cross-platform)
 
 ### Technologies
 -----------------
@@ -15,6 +16,8 @@ Project is created with:
 * Redux with Thunk middleware
 * SCSS Modules
 * React HLS Player
+* Ionic
+* Capacitor
 
 ### IDE
 - Visual Studio Code with extensions
@@ -42,3 +45,18 @@ If you do not know if you have it installed on your computer and you still want 
 * *Run command **yarn*** to install all dependencies
 * *Run command **yarn dev*** to run local server on localhost:3000
 * *Run command **yarn build*** to build the project
+
+### Cross platform
+-----------------
+To be able to build the Android/IOS project, you need to have installed **Ionic CLI**. To do that run command **npm install -g @ionic/cli**.
+Then build ReactApp using command **yarn build**
+
+#### Android
+* Run command **ionic capacitor add android** to crate android build
+* Run command **npx cap open android** to open project in Android Studio
+
+#### IOS
+* Run command **ionic capacitor add ios** to crate ios build
+* Run command **npx cap open ios** to open project in Xcode
+
+After building cross platform project, you have to again run **yarn** to install dependencies or again clone repo to be able to run React App on localhost.
