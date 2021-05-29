@@ -13,8 +13,9 @@ This project was made due to the BSG recruitment task for the position of Junior
 Project is created with:
 * TypeScript
 * React
-* Redux with thunk middleware
+* Redux with Thunk middleware
 * SCSS Modules
+* React HLS Player
 
 ### IDE
 - Visual Studio Code with extensions
