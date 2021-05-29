@@ -98,6 +98,11 @@ export interface SingleVideo {
     ContentUrl: string
 }
 
+export interface SingleVideoEntryData {
+    MediaId: number,
+    StreamType: string
+}
+
 export const defaultSingleVideo = {
     MediaId: '',
     Title: '',

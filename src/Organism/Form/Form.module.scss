@@ -1,10 +1,12 @@
+@import "Styles/variables.scss";
+
 .formElementsWrapper {
   display: flex;
   flex-direction: column;
   gap: 0.7em;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.1);
+  background: $formBg;
   padding: 3em;
   width: 300px;
 }

@@ -61,7 +61,7 @@ export const { start, success, failed, logout } = loginUser.actions;
 export const loginUserFetch = (userType: string, loginData: LoginData = AnonymData): AppThunk => async (dispatch) => {
     dispatch(start());
     try {
-        const result = await axios.post('/Authorization/SignIn', loginData);
+        const result = await axios.Auth.login(loginData);
         dispatch(success(result.data));
         localStorage.setItem('token', result.data.AuthorizationToken.Token);
         localStorage.setItem('userType', userType);

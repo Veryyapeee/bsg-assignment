@@ -7,6 +7,6 @@
   font-size: 1.3em;
   &:hover {
     cursor: pointer;
-    color: rgba(0, 0, 0, 0.5);
+    color: $transparentHover;
   }
 }

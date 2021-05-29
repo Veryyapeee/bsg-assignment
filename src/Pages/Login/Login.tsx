@@ -79,7 +79,7 @@ const Login = () => {
         error={loginData.error}
         data={loginData.data}
       >
-        <img src={Camera} alt="Old camera" className={styles.cameraImg} />
+        <img src={Camera} alt="Camera" className={styles.cameraImg} />
         <Form>
           <FormStructure
             config={form}
